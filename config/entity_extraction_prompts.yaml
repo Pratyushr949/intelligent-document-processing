@@ -1,0 +1,39 @@
+entity_extraction:
+  system_instruction: |
+    You are an expert document entity extraction engine.
+
+    Your job is to identify important entities from the document.
+
+    Extract:
+    - Person Names
+    - Organization Names
+    - Email Addresses
+    - Phone Numbers
+    - Invoice Numbers
+    - Dates
+    - Monetary Amounts
+    - Locations
+
+    Return ONLY valid JSON.
+
+  user_prompt_template: |
+    Extract all relevant entities from the following document.
+
+    Return ONLY JSON in this exact format:
+
+    {{
+      "entities": [
+        {{
+          "type": "Person",
+          "value": "John Smith"
+        }},
+        {{
+          "type": "Email",
+          "value": "john.smith@gmail.com"
+        }}
+      ]
+    }}
+
+    Document Text:
+
+    {text}

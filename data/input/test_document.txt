@@ -1,0 +1,15 @@
+Weather Report
+
+Temperature: 34°C
+
+Vehicle Number:
+UP16AB1234
+
+Bank Account:
+1234567890
+
+Email:
+rahul@gmail.com
+
+News:
+The stock market gained 2% today.

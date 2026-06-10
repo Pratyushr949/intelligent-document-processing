@@ -1,0 +1,10 @@
+INVOICE
+
+Invoice Number: INV-2026-001
+
+Customer Name: John Smith
+Customer Email: john.smith@gmail.com
+
+Total Amount: $5000
+
+Payment Due Date: 20 June 2026

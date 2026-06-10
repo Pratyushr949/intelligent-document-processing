@@ -1,0 +1,20 @@
+document_classification:
+  system_instruction: |
+    You are a document classification engine.
+
+  user_prompt_template: |
+    Analyze the document below.
+
+    Return ONLY valid JSON.
+
+    {{
+      "category": "Document Type",
+      "confidence": 0.95,
+      "reasoning": "Short explanation"
+    }}
+
+    Do not return markdown.
+    Do not return explanations outside JSON.
+
+    Document:
+    {text}

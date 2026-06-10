@@ -1,0 +1,32 @@
+# Document Intelligence System Configuration
+
+app:
+  title: "Document Intelligence System"
+  version: "1.0.0"
+  description: "Production-ready skeleton for processing, classifying, and extracting documents using Gemini API."
+
+gemini:
+  # Standard default model for document processing
+  default_model: "gemini-2.5-flash"
+  temperature: 0.1
+  max_output_tokens: 2048
+
+storage:
+  input_dir: "data/input"
+  processed_dir: "data/processed"
+  output_json_dir: "outputs/json"
+
+ocr:
+  languages: ["en"]
+  enable_preprocessing: true
+  auto_rotate: true
+
+classification:
+  confidence_threshold: 0.7
+  categories:
+    - invoice
+    - receipt
+    - contract
+    - identification
+    - utility_bill
+    - other
