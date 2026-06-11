@@ -98,20 +98,15 @@ class DocumentOrchestratorAgent(BaseDocumentAgent):
             )
             all_chunks.extend(page_chunks)
 
-            print("SKIPPING LLM")
-            llm_category = {
-                "document_type": "Unknown"
-            }
-
-            print("SKIPPING ENTITY")
-            entities = {
-              "entities": []
-            }
-
-            print("SKIPPING PII")
-            pii_results = {
-                "pii_entities": []
-}
+            print("RUNNING LLM")
+            llm_category = self.llm_classifier.classify_text(raw_text)
+            
+            print("RUNNING ENTITY")
+            entities = self.entity_extractor.extract_entities(raw_text)
+            
+            print("RUNNING PII")
+            pii_results = self.pii_detector.detect_pii(raw_text)
+            
             rule_matches = []
         # 7. Validation Layer Execution (Formatting checks and Aadhaar Verhoeff verification)
         validated_matches = []

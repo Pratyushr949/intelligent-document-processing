@@ -301,7 +301,9 @@ if uploaded_file:
                 )
 
                 result = response.json()
-
+                if "results" in result:
+                    result = result["results"]
+                
                 st.write("DEBUG RESPONSE")
                 st.json(result)
 
@@ -328,14 +330,19 @@ if uploaded_file:
             )
 
             with t1:
+
                 st.subheader("OCR Result")
 
-                st.text(
-                    result.get(
-                        "raw_text",
-                        "No OCR output"
+                ocr_text = result.get("raw_text", "")
+
+                if ocr_text:
+                    st.text_area(
+                        "OCR Content",
+                        ocr_text,
+                        height=400
                     )
-                )
+                else:
+                    st.warning("No OCR output found")
 
             with t2:
 
