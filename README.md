@@ -1,189 +1,406 @@
-# AI Document Intelligence Platform
+# 🚀 ConsensusDoc AI — Multi-Agent Intelligent Document Processing Platform
 
-An AI-powered document processing platform built using **Google ADK**, **Gemini 2.5 Flash**, **FastAPI**, **Streamlit**, **OCR**, **Entity Extraction**, and **PII Detection**.
-
-The platform enables users to upload documents and automatically perform:
-
-* OCR Text Extraction
-* Document Classification
-* Named Entity Recognition (NER)
-* PII Detection
-* JSON Output Generation
+> **Enterprise-grade AI Document Intelligence Platform powered by Multi-Agent Consensus Architecture, Google ADK, Gemini, Ray Parallel Processing, OCR, Human-in-the-Loop Validation, and Automated Structured Output Generation.**
 
 ---
 
-# Features
+## 🌟 Project Overview
 
-## OCR Processing
+**ConsensusDoc AI** is an advanced **Intelligent Document Processing (IDP)** platform designed to automate enterprise document understanding workflows.
+
+Unlike traditional single-model pipelines, this system uses **multiple AI agents running in parallel** to independently classify and analyze uploaded documents.
+
+The system then performs **consensus-based voting**, calculates a **mathematical confidence score**, and automatically routes uncertain predictions for **human review**.
+
+The platform is designed to simulate **industry-grade enterprise document automation systems** used in:
+
+* Banking
+* Insurance
+* FinTech
+* KYC Verification
+* Compliance Automation
+* Enterprise Document Intelligence
+
+---
+
+# 🔥 Core Innovation
+
+Instead of relying on a single AI model:
+
+```text
+Traditional Systems
+
+PDF → Single Model → Output
+```
+
+ConsensusDoc AI uses:
+
+```text
+ConsensusDoc AI
+
+PDF
+ ↓
+OCR Extraction
+ ↓
+Preprocessing Engine
+ ↓
+5 Parallel AI Agents (Ray Distributed Execution)
+
+Agent 1
+Agent 2
+Agent 3
+Agent 4
+Agent 5
+
+ ↓
+
+Consensus Voting Engine
+
+ ↓
+
+Confidence Calculation Engine
+
+ ↓
+
+Threshold Decision Engine
+
+High Confidence → JSON + Excel Output
+
+Low Confidence → Human Review Queue
+```
+
+This significantly improves:
+
+* Reliability
+* Accuracy
+* Explainability
+* Fault Tolerance
+* Decision Confidence
+
+---
+
+# 🏗 System Architecture
+
+```text
+User Upload PDF / Document
+            │
+            ▼
+      OCR Extraction Engine
+        (PaddleOCR)
+
+            │
+            ▼
+      Text Preprocessing
+   (Cleaning + Normalization)
+
+            │
+            ▼
+      Ray Parallel Execution
+
+ ┌─────────────────────────────────┐
+ │      Multi-Agent Layer         │
+ │                               │
+ │  Agent 1 → Document Classifier │
+ │  Agent 2 → Document Classifier │
+ │  Agent 3 → Document Classifier │
+ │  Agent 4 → Document Classifier │
+ │  Agent 5 → Document Classifier │
+ │                               │
+ └─────────────────────────────────┘
+
+            │
+            ▼
+      Consensus Voting Engine
+
+            │
+            ▼
+     Confidence Score Engine
+
+ Formula:
+
+ FinalConfidence =
+ VoteRatio × AverageConfidence × (1 - Variance)
+
+            │
+            ▼
+
+   ┌─────────────────────┐
+   │ Threshold ≥ 0.75    │
+   │                     │
+   │ Generate Outputs    │
+   └─────────────────────┘
+
+            │
+
+   ┌─────────────────────┐
+   │ Threshold < 0.75    │
+   │                     │
+   │ Human Review Queue  │
+   └─────────────────────┘
+
+            │
+            ▼
+
+ Structured JSON + Excel Output
+```
+
+---
+
+# ⚡ Key Features
+
+## 📄 OCR Processing Engine
 
 Extracts text from:
 
 * PDF
-* PNG
-* JPG
-* JPEG
-* DOCX
-* TXT
-
-Supports:
-
-* Digital PDFs
+* Scanned PDFs
+* Multi-page documents
 * Image-based documents
-* Multi-page document processing
+
+Powered by:
+
+* PaddleOCR
+* pdfplumber
+* NumPy
+
+Capabilities:
+
+* High accuracy OCR extraction
+* Multi-page PDF support
+* Scanned document support
 
 ---
 
-## Document Classification
+## 🤖 Parallel Multi-Agent AI System
 
-Uses Gemini 2.5 Flash to classify uploaded documents.
+Uses **5 AI Agents running simultaneously** using **Ray distributed execution**.
 
-Supported examples:
+Each agent independently analyzes the same document.
+
+Benefits:
+
+* Parallel inference
+* Independent reasoning
+* Higher reliability
+* Fault tolerance
+* Consensus-based decision making
+
+---
+
+## 🧠 Google ADK + Gemini Integration
+
+Built using:
+
+* Google ADK
+* Gemini 2.5 Flash
+
+Capabilities:
+
+* Document understanding
+* Semantic classification
+* JSON structured responses
+* Classification reasoning generation
+
+---
+
+## 🗳 Consensus Voting Engine
+
+Each agent independently predicts:
+
+Example:
+
+```text
+Agent 1 → invoice → 0.95
+
+Agent 2 → invoice → 0.97
+
+Agent 3 → passport → 0.85
+
+Agent 4 → invoice → 0.92
+
+Agent 5 → invoice → 0.98
+```
+
+Voting Engine decides:
+
+```text
+Final Document Type = Invoice
+```
+
+Benefits:
+
+* Reduced hallucination
+* Improved accuracy
+* Better reliability
+
+---
+
+## 📊 Mathematical Confidence Engine
+
+Confidence score is NOT blindly taken from the LLM.
+
+Instead:
+
+```text
+FinalConfidence = VoteRatio × AverageConfidence × (1 - Variance)
+```
+
+This provides:
+
+* Mathematical reliability scoring
+* Lower hallucination risk
+* Better confidence estimation
+
+---
+
+## 👨 Human-in-the-Loop Review System
+
+If confidence falls below threshold:
+
+```text
+Threshold < 0.75
+```
+
+The document is automatically sent to:
+
+```text
+storage/review_queue/
+```
+
+Benefits:
+
+* Manual verification
+* Safer enterprise deployment
+* Reduced wrong classifications
+
+---
+
+## 📁 Automated Output Generation
+
+System automatically generates:
+
+### JSON Output
+
+```text
+storage/json/
+```
+
+Contains:
+
+* Document Type
+* Confidence Score
+* Agent Predictions
+* Consensus Result
+* Reasoning
+
+---
+
+### Excel Output
+
+```text
+storage/excel/
+```
+
+Contains:
+
+* Classification Summary
+* Confidence Metrics
+* Agent-wise Results
+* Final Decision
+
+---
+
+# 📌 Supported Document Types
+
+Currently supports classification of:
 
 * Invoice
-* Receipt
-* Contract
-* Other custom categories
+* Passport
+* Aadhaar
+* PAN Card
+* Bank Statement
+* Insurance Document
 
-Output includes:
-
-* Category
-* Confidence Score
-* Classification Reasoning
+Architecture supports future expansion.
 
 ---
 
-## Entity Extraction
+# 🛠 Technology Stack
 
-Automatically extracts important business entities:
+## AI & LLM Layer
 
-* Invoice Number
-* Customer Name
-* Email Address
-* Phone Number
-* PAN Number
-* Aadhaar Number
-* Organization Name
-* Address
-* Amount
-* Date
+* Google ADK
+* Gemini 2.5 Flash
+
+## Parallel Processing
+
+* Ray Distributed Computing
+
+## Backend
+
+* FastAPI
+* Uvicorn
+
+## OCR
+
+* PaddleOCR
+* pdfplumber
+* NumPy
+
+## Data Processing
+
+* Pandas
+* JSON
+* OpenPyXL
+
+## Configuration
+
+* YAML
+* Python Dotenv
+
+## Future Frontend
+
+* React
+* Vite
+* Tailwind CSS
+* Recharts
+* Framer Motion
 
 ---
 
-## PII Detection
-
-Detects Personally Identifiable Information (PII):
-
-* Names
-* Email Addresses
-* Phone Numbers
-* PAN Numbers
-* Aadhaar Numbers
-
-Useful for compliance and privacy workflows.
-
----
-
-## Unified JSON Output
-
-Generates a structured JSON response containing:
-
-* OCR Results
-* Classification Results
-* Extracted Entities
-* PII Detection Results
-* Metadata
-
-Results are automatically stored inside:
+# 📂 Project Structure
 
 ```text
-outputs/json/
-```
+project2/
 
----
-
-# Frontend Dashboard
-
-The project includes a modern Streamlit dashboard.
-
-Features:
-
-* Dark Theme UI
-* File Upload Interface
-* OCR Results Tab
-* Classification Tab
-* Entity Extraction Tab
-* PII Detection Tab
-* Full JSON Output Tab
-* Download Analysis Button
-
----
-
-# System Architecture
-
-```text
-Document Upload
-       │
-       ▼
- OCR Processing
-       │
-       ▼
-Document Classification
-       │
-       ▼
- Entity Extraction
-       │
-       ▼
- PII Detection
-       │
-       ▼
- JSON Generation
-       │
-       ▼
- Result Download
-```
-
----
-
-# Repository Structure
-
-```text
-project1/
-│
 ├── agents/
-│   ├── base.py
-│   ├── orchestrator_agent.py
-│   ├── ocr_agent.py
-│   ├── classify_agent.py
-│   ├── chunking_agent.py
+│   ├── adk_agent_1.py
+│   ├── adk_agent_2.py
+│   ├── adk_agent_3.py
+│   ├── adk_agent_4.py
+│   ├── adk_agent_5.py
+│   └── ray_manager.py
 │
-├── classify/
-│   ├── entity_extractor.py
-│   ├── pii_detector.py
-│   ├── llm_classifier.py
-│   ├── validator.py
+├── backend/
+│   ├── orchestrator.py
+│   ├── ocr_engine.py
+│   ├── preprocess.py
+│   ├── confidence_engine.py
+│   ├── confidence_threshold.py
+│   ├── voting_engine.py
+│   ├── reason_aggregator.py
+│   ├── json_generator.py
+│   ├── excel_generator.py
+│   └── routes.py
 │
 ├── config/
 │   ├── config.yaml
-│   ├── logging.yaml
-│   ├── classification_prompts.yaml
-│   ├── entity_extraction_prompts.yaml
-│   ├── pii_detection_prompts.yaml
+│   └── key_manager.py
 │
-├── data/
-│   ├── input/
-│   └── processed/
-│
-├── frontend/
-│   ├── app.py
-│   └── styles.css
-│
-├── ocr/
-│   ├── service.py
-│   ├── pdf_reader.py
-│   ├── text_cleaner.py
-│
-├── outputs/
-│   └── json/
+├── storage/
+│   ├── json/
+│   ├── excel/
+│   └── review_queue/
 │
 ├── run.py
 ├── requirements.txt
@@ -192,199 +409,114 @@ project1/
 
 ---
 
-# Technology Stack
+# 🌐 API Endpoints
 
-## AI & Agents
-
-* Google ADK
-* Gemini 2.5 Flash
-
-## Backend
-
-* FastAPI
-* Uvicorn
-
-## Frontend
-
-* Streamlit
-* Custom CSS
-
-## OCR
-
-* PyMuPDF
-* Tesseract OCR
-
-## Configuration
-
-* YAML
-* Python Dotenv
-
----
-
-# Installation
-
-## Clone Repository
-
-```bash
-git clone <repository-url>
-cd project1
-```
-
-## Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-### Windows
-
-```bash
-.\venv\Scripts\activate
-```
-
-### Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
----
-
-## Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# Environment Configuration
-
-Create a `.env` file:
-
-```env
-GEMINI_API_KEY=YOUR_API_KEY
-ENV=development
-HOST=0.0.0.0
-PORT=8000
-LOG_LEVEL=INFO
-```
-
----
-
-# Running the Backend
-
-```bash
-python run.py
-```
-
-Backend URL:
-
-```text
-http://localhost:8000
-```
-
-Swagger Documentation:
-
-```text
-http://localhost:8000/docs
-```
-
----
-
-# Running the Frontend
-
-```bash
-python -m streamlit run frontend/app.py
-```
-
-Frontend URL:
-
-```text
-http://localhost:8501
-```
-
----
-
-# API Endpoints
-
-## Health Check
+### Health Check
 
 ```http
 GET /health
 ```
 
----
-
-## OCR
+### Upload Document
 
 ```http
-POST /api/v1/ocr
+POST /api/upload
 ```
 
----
-
-## Classification
+### View Documents
 
 ```http
-POST /api/v1/classify
+GET /api/documents
 ```
 
----
-
-## Full Processing Pipeline
+### Review Queue
 
 ```http
-POST /api/v1/process
+GET /api/review-queue
 ```
 
-Returns:
+### Download JSON Output
 
-```json
-{
-  "ocr_metadata": {},
-  "classification": {},
-  "extracted_entities": [],
-  "pii_detection": {}
-}
+```http
+GET /api/documents/{doc_id}/download/json
+```
+
+### Download Excel Output
+
+```http
+GET /api/documents/{doc_id}/download/excel
 ```
 
 ---
 
-# Sample Workflow
+# 📈 Current Development Status
 
-1. Upload Document
-2. OCR Extraction
-3. Document Classification
-4. Entity Extraction
-5. PII Detection
-6. JSON Generation
-7. Download Analysis
+Backend Progress:
 
----
+```text
+OCR Engine                 ✅ Completed
 
-# Current Capabilities
+FastAPI Backend           ✅ Completed
 
-✅ OCR Processing
+Parallel Ray Agents       ✅ Completed
 
-✅ Document Classification
+Google ADK Integration    ✅ Completed
 
-✅ Entity Extraction
+Consensus Engine          ✅ Completed
 
-✅ PII Detection
+Confidence Engine         ✅ Completed
 
-✅ FastAPI Backend
+Human Review Queue        ✅ Completed
 
-✅ Streamlit Frontend
+JSON Generation           ✅ Completed
 
-✅ JSON Export
+Excel Generation          ✅ Completed
 
-✅ Gemini Integration
+Frontend Dashboard        🚧 In Progress
+
+Authentication Layer      🚧 Planned
+```
 
 ---
 
-# Author
+# 🎯 Future Improvements
 
-Pratyush Raj
+Planned upgrades:
 
-AI Document Intelligence Platform
+* Enterprise React Frontend Dashboard
+* JWT Authentication
+* Admin/User Login System
+* PostgreSQL Database
+* Real-time Analytics Dashboard
+* Agent Performance Monitoring
+* Document History Tracking
+* Production Deployment
+
+---
+
+# 👨‍💻 Author
+
+**Pratyush Raj**
+
+B.Tech CSE (AI/ML)
+
+Building enterprise-grade AI systems focused on:
+
+* Multi-Agent AI
+* Document Intelligence
+* Distributed AI Systems
+* Production AI Engineering
+
+---
+
+# ⭐ Project Vision
+
+Building an enterprise-grade **Intelligent Document Processing Platform** that combines:
+
+* Multi-Agent AI Systems
+* Distributed Parallel Computing
+* Consensus Decision Intelligence
+* Human-in-the-Loop Validation
+* Reliable AI Confidence Estimation
+
+to create **trustworthy production-ready AI systems**.
